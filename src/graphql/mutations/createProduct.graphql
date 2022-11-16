@@ -1,0 +1,41 @@
+mutation CreateProduct($product: ProductInput!) {
+    createProduct(product: $product) {
+        ... on Product {
+            id
+            price
+            name
+            description
+            enabled
+            category {
+                ... on Category {
+                    id
+                    name
+                    parent {
+                        id
+                        name
+                    }
+                }
+            }
+            tags {
+                ... on Tag {
+                    id
+                    name
+                }
+            }
+            views {
+                ... on View {
+                    id
+                    name
+                    perspective
+                }
+            }
+            appearances {
+                ... on Appearance {
+                    id
+                    name
+                    texture
+                }
+            }
+        }
+    }
+}

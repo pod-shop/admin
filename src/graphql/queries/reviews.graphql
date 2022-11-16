@@ -1,0 +1,22 @@
+query Reviews {
+    reviews {
+        ... on ProductReview {
+            id
+            comment
+            rating
+            createdAt
+            product {
+                ... on Product {
+                    id
+                    name
+                }
+            }
+            user {
+                ... on User {
+                    id
+                    name
+                }
+            }
+        }
+    }
+}

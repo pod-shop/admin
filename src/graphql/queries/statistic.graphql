@@ -1,0 +1,17 @@
+query Statistic {
+    statistic {
+        ... on Statistic {
+            productsCount
+            ordersCount
+            totalEarnings
+            sales {
+                month
+                count
+            }
+            visitors {
+                month
+                count
+            }
+        }
+    }
+}

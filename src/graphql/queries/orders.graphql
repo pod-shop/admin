@@ -1,0 +1,31 @@
+query Orders {
+    orders {
+        ... on Order {
+            id
+            status
+            notes
+            items {
+                ... on OrderItem {
+                    id
+                    price
+                    quantity
+                    product { 
+                        ... on Product {
+                            id
+                            name
+                            price
+                        }
+                    }
+                }
+            }
+            user {
+                ... on User {
+                    id
+                    name
+                    email
+                }
+            }
+            createdAt
+        }
+    }
+}

@@ -1,0 +1,27 @@
+overwrite: true
+schema: ${NEXT_PUBLIC_GRAPHQL_URL}
+documents: "src/graphql/**/*.{gql,graphql}"
+generates:
+  src/graphql/generated/index.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      scalars:
+        UUID: string
+        JSON: object
+        Date: Date
+        Time: Date
+        LocalTime: Date
+        DateTime: Date
+        Url: string
+        PositiveInt: number
+        NonNegativeInt: number
+        PositiveFloat: number
+        NonNegativeFloat: number
+        Locale: string
+        Object: object
+        Email: string
+        Short: number
+        Byte: number

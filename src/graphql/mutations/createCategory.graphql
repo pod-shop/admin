@@ -1,0 +1,12 @@
+mutation CreateCategory($category: CategoryInput!) {
+    createCategory(category: $category) {
+        ... on Category {
+            id
+            name
+            parent {
+                id
+                name
+            }
+        }
+    }
+}

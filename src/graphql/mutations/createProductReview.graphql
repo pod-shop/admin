@@ -1,0 +1,29 @@
+mutation CreateProductReview($productId: ID!, $productReviewInput: ProductReviewInput!) {
+    createProductReview(productId: $productId, productReviewInput: $productReviewInput) {
+        ... on ProductReview {
+            id
+            comment
+            rating
+            user {
+                ... on User {
+                    id
+                    name
+                }
+            }
+            product {
+                ... on Product {
+                    id
+                    name
+                }
+            }
+            appearance {
+                ... on Appearance {
+                    id
+                    name
+                    texture
+                    colors
+                }
+            }
+        }
+    }
+}

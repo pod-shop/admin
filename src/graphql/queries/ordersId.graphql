@@ -1,0 +1,7 @@
+query OrdersId {
+    orders {
+        ... on Order {
+            id
+        }
+    }
+}

@@ -1,0 +1,12 @@
+query Categories {
+    categories {
+        id
+        name
+        parent {
+            ... on Category {
+                id
+                name
+            }
+        }
+    }
+}
